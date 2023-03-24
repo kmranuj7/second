@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>LOGIN</title>
+</head>
+<body>
+		
+<div class="conatiner">
+		<h1 style="color:red">Employee Login</h1>
+		<form class="col-5" th:action="@{/employee_login}" th:object="${employee}" method="post">
+			<label><h2>Employee Email</h2></label>
+			<input type="email" class="form-control" th:field="*{email}">
+			<label><h2>Password</h2></label>
+			<input type="password" class="form-control" th:field="*{password}">
+			<br/><br/>
+			<button class="btn btn-success">Login</button>
+		</form>
+
+
+	</div>	
+</body>
+</html>

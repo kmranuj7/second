@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Signup</title>
+</head>
+<body>
+<section>
+	<div class="container">
+		<div class="row">
+		<div class="col-md-8 offset-md-2">
+		<div class="my-card mt-1">
+		<h1 class="text-center">SignUp Here</h1>
+		<form action=" " th:action="@{/do_register}" method="post" th:object="${employee}">
+		
+		
+		<!-- name field -->
+	<div class="form-group">
+    <label for="employeeName_field">Name</label>
+    <input 
+    name="employeeName"
+    type="text" 
+    class="form-control"
+    id="employeeName_field" 
+    aria-describedby="emailHelp" 
+    placeholder="Enter here"
+    required 
+    th:value="${employee.employeeName}"/>
+    
+    
+    </div>
+    
+    <div class="form-group">
+    <label for="email_field">Email</label>
+    <input 
+    name="email"
+    type="email" 
+    class="form-control" 
+    id="email_field" 
+    aria-describedby="emailHelp" 
+    placeholder="Enter here"
+    required
+    th:value="${employee.email}" />
+    </div>
+    
+    <div class="form-group">
+    <label for="password_field">Password</label>
+    <input 
+    name="password"
+    type="password" 
+    class="form-control" 
+    id="password_field" 
+    aria-describedby="emailHelp" 
+    placeholder="Enter here"
+    required />
+    </div>
+    
+   
+   
+	<div class="form-group">
+    <label for="contact_field">Contact</label>
+    <input 
+    name="contact"
+    type="text" 
+    class="form-control" 
+    id="contact_field" 
+    aria-describedby="emailHelp" 
+    placeholder="Enter here"
+    required />
+    </div>
+	
+   
+   
+   
+   
+   
+   
+   
+    
+    <div class="conatiner text-center">
+    <button type="submit"  class="btn bg-primary text-white">
+    Submit
+    </button>
+    
+    <button type="reset" class="btn btn-warning text-white">
+    Reset
+    </button>
+    
+    </div>
+		</form>
+				<form action=" " th:action="@{/do_invoice}" method="post" th:object="${employee}">
+				<div class="conatiner text-center">
+    			<button type="submit"  class="btn bg-primary text-white">
+    			GeneratePDF
+    			</button>
+				</div>
+				</form>
+		
+		
+		</div>
+		</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>
